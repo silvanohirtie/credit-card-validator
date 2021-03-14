@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <cs50.h>
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
@@ -105,8 +104,9 @@ bool validChecksum(long creditCard) {
 
 
 int main() {
-
-  long creditCard = get_long("Insert credit card number: ");
+  long creditCard;
+  printf("Insert credit card number:\n");
+  scanf("%ld",&creditCard);
 
   if (validChecksum(creditCard)) {
     printf("%s", creditName(creditCard));
